@@ -1,0 +1,71 @@
+'''
+  Comentarios:
+    Variables, tipos de datos, casting
+
+'''
+
+caracter = "Hola Ricardo, como estas? espero que estes bien!"
+caracter2 = "Hola Ricardo, como estas? espero que estes bien!"
+caracter3 = "Hola Ricardo, como estas? espero que estes bien"
+
+
+#caracter = str(20)
+#caracter = int("20")
+
+print(caracter)
+print(type(caracter))
+
+#usamos len(): retorna la cantidad de caracteres
+
+print("La cantidad de caracteres: ", len(caracter))
+
+print(caracter[5:12])
+
+print(caracter[14:25])
+
+print(caracter[19:24]) 
+#slicing
+print(caracter[-6:-1]) 
+print(caracter[-5:-1])
+
+print(caracter[-22:-15]*10)
+
+
+#comparando
+print(caracter == caracter2 == caracter3)
+
+#logica booleana
+# V y V -> V
+# V y F -> F
+
+
+alumno = "Sofia"
+edad = 27
+curso = "BD"
+
+texto = "La alumna {0} \n tiene {1} años \n y estudia {2} en UPC"
+print(texto.format(alumno.upper(), edad, curso.lower()))
+
+
+#Operadores
+
+numero1 = 10
+
+numero1 -= 5
+
+#numero1 = numero1 + 10
+
+print(numero1)
+
+numero2 = 16
+potencia = numero2 ** (1/2)
+
+print(potencia)
+
+#comparaciones
+print(numero1 == numero2)
+print(numero1 != numero2)
+
+
+numero3 = int(input("Ingresa numero 3"))
+print(type(numero3))
