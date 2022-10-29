@@ -1,0 +1,152 @@
+#Pregunta1
+'''
+Escribir un programa que pregunte al usuario su edad y muestre por pantalla si es
+mayor de edad o no.
+
+
+edad = int(input("¿Cuál es su edad? "))
+
+if (edad > 99):
+  print('Lo siento, solo evaluo edad de 2 digitos')
+
+elif (edad < 18):
+  print('la persona es menor de edad')
+else:
+  print('la persona es mayor de edad')
+  '''
+
+#Pregunta2
+'''
+  Escribir un programa que almacene la cadena de caracteres contraseña en una
+variable, pregunte al usuario por la contraseña e imprima por pantalla si la contraseña
+introducida por el usuario coincide con la guardada en la variable sin tener en cuenta
+caracteres mayúsculas y minúsculas.
+
+
+secret = '123'
+
+password = input("Ingresa la contraseña secreta ")
+
+if (secret == password):
+  print("Excelente, acertaste la contraseña")
+else:
+  print("Sigue intentando")
+
+  '''
+#Pregunta3
+
+'''
+Escribir un programa que pida al usuario dos números y muestre por pantalla su
+división. Si el divisor es cero el programa debe mostrar un error.
+
+
+dividendo = int(input("Ingrese el dividendo "))
+divisor = int(input("Ingrese el divisor "))
+
+if (divisor == 0):
+  print("¡Error!, no se puede dividir un numero entre 0")
+else:
+  print("El resultado es: " , str(dividendo/divisor))
+  '''
+
+#Pregunta4
+'''
+Escribir un programa que pida al usuario un número entero y muestre por pantalla si es
+par o impar
+
+
+numero = int(input("Ingrese un numero "))
+
+if (numero % 2 == 0):
+  print("El numero es par")
+else:
+  print("El numero es impar")
+'''
+
+
+#Pregunta5
+'''
+Para tributar un determinado impuesto se debe ser mayor de 16 años y tener unos
+ingresos iguales o superiores a S/.3000 mensuales. Escribir un programa que pregunte
+al usuario su edad y sus ingresos mensuales y muestre por pantalla si el usuario tiene
+que tributar o no.
+
+
+edad = int(input("Ingrese su edad: "))
+ingresos = float((input("Ingrese sus ingresos: ")))
+
+if (edad > 16 and ingresos >= 3000):
+  print("Lo siento, tienes que pagar tributo")
+else:
+  print("Yuhu, no tienes que pagar tributos!")
+  
+'''
+
+#Ejercicio6
+'''
+Los alumnos de un curso se han dividido en dos grupos A y B de acuerdo al sexo y el
+nombre. El grupo A está formado por las mujeres con un nombre anterior a la M y los
+hombres con un nombre posterior a la N y el grupo B por el resto. Escribir un programa
+que pregunte al usuario su nombre y sexo, y muestre por pantalla el grupo que le
+corresponde.
+
+
+nombre = input("Ingrese su nombre ")
+genero = input("Ingresa su genero(M/F) ")
+grupo =""
+
+if genero.upper() == "F":
+  if nombre.lower() < "m":
+    grupo = "A"
+  else:
+    grupo = "B"
+elif genero.upper() == "M":
+  if nombre.lower()> "n":
+    grupo = "A"
+  else:
+    grupo = "B"
+else:
+  print("Genero incorrecto")
+
+print("Hola ", nombre, " perteneces al grupo: ", grupo)
+'''
+
+#Ejercicio7
+'''
+Los tramos impositivos para la declaración de la renta en un determinado país son los
+siguientes:
+  Renta                   Tipo impositivo
+  Menos de 10,000         5%
+  Entre 10,000 y 20,000   15%
+  Entre 20,000 y 35,000   20%
+  Entre 35,000 y 60,000   30%
+  Más de 60,000           45%
+Escribir un programa que pregunte al usuario su renta anual y muestre por pantalla el
+tipo impositivo que le corresponde.
+
+'''
+  
+#renta = int(input("Ingrese el monto de su renta anual"))
+
+# generando numeros aleatorios
+
+import random
+
+renta = random.randint(1000,10000)
+tipoImp = 0.0
+
+if (renta < 10000):
+  tipoImp = 0.05
+elif (renta < 20000):
+  tipoImp = 0.15
+elif (renta < 35000):
+  tipoImp = 0.20
+elif (renta < 60000):
+  tipoImp = 0.30
+else:
+  tipoImp = 0.45
+
+#Mostrando el resueltado
+print("El valor de la renta es: ", str(renta))
+print("Tienes que pagar: ", str(renta * tipoImp))
+
