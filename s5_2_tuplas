@@ -1,0 +1,72 @@
+'''Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista y la muestre por pantalla.
+
+asignaturas = ["Matemáticas", "Física", "Química", "Historia" , "Lengua"]
+
+for asig in asignaturas:
+  print("Yo estudio : ", asig)
+'''
+
+'''Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista y la muestre por pantalla el mensaje Yo estudio <asignatura>, donde <asignatura> es cada una de las asignaturas de la lista.'''
+
+'''Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura, y después las muestre por pantalla con el mensaje En <asignatura> has sacado <nota> donde <asignatura> es cada una de las asignaturas de la lista y <nota> cada una de las correspondientes notas introducidas por el usuario.
+
+
+
+#notas = []
+notas = ()
+misnotas = list(notas)
+aprobados = []
+
+for curso in asignaturas:
+  nota = input("¿Cual es la nota que sacaste en " + curso +"?")
+  misnotas.append(nota)
+  if int(nota) >= 13:
+    aprobados.append(curso)
+
+notas = tuple(misnotas)
+'''
+'''
+for x in range(len(asignaturas)):
+  print("En el curso ", asignaturas[x], "has sacado ", notas[x])
+
+print("La cantidad de aprobados es: ", aprobados)
+
+
+for curso in aprobados:
+  asignaturas.remove(curso)
+'''
+#print("Te vas a bica en ", asignaturas)
+
+'''Escribir un programa que pregunte al usuario los números ganadores de la lotería primitiva, los almacene en una lista y los muestre por pantalla ordenados de menor a mayor.
+
+
+
+ganadores = []
+
+for x in range(5):
+  ganadores.append(int(input("Ingrese el numero ganador: ")))
+
+ganadores.sort(reverse=True)
+
+print(ganadores)
+'''
+
+'''
+Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura y elimine de la lista las asignaturas aprobadas. Al final el programa debe mostrar por pantalla las asignaturas que el usuario tiene que repetir.
+'''
+
+'''
+Escribir un programa que pida al usuario una palabra y muestre por pantalla si es un palíndromo
+'''
+
+palabra = input("ingresa una palabra")
+palabraInvertida = palabra
+palabra = list(palabra)
+palabraInvertida = list(palabraInvertida)
+
+palabraInvertida.reverse()
+
+if palabra == palabraInvertida:
+  print(palabra, " es palindroma")
+else:
+  print(palabra, " no es palindroma")
