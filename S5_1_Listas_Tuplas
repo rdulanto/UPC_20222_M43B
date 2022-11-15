@@ -1,0 +1,22 @@
+'''
+********Listas**********
+'''
+
+miLista = ["Ricardo","Paola","Alejandra"]
+print(miLista)
+
+miLista2 =["Jose","Luis"]
+
+miLista.append(miLista2)
+
+print(miLista)
+
+for lista in miLista:
+  print("El nombre es: ", lista)
+
+'''*******************************'''
+'''*********Tuplas***************'''
+
+miTupla = (12,23,45,65,78)
+
+print(miTupla[-1])
