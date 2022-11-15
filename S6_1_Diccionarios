@@ -1,0 +1,97 @@
+'''
+Escribir un programa que guarde en una variable el diccionario {'Euro':'€', 'Dollar':'$', 'Yen':'¥'},
+pregunte al usuario por una divisa y muestre su símbolo o un mensaje de aviso si la divisa no está en
+el diccionario.
+
+
+monedas = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
+moneda = input('Ingrese una moneda: ')
+moneda = moneda.title()
+
+#print(monedas.get(moneda,"La moneda no existe"))
+
+if moneda in monedas:
+  print(monedas[moneda])
+else:
+  print('La moneda no existe')
+
+  '''
+'''
+  Escribir un programa que pregunte al usuario su nombre, edad, dirección y teléfono y lo guarde en un
+diccionario. Después debe mostrar por pantalla el mensaje <nombre> tiene <edad> años, vive en
+<dirección> y su número de teléfono es <teléfono>.
+
+
+
+nombre = input('Ingresa tu nombre: ')
+edad = input('Ingresa tu edad: ')
+direccion = input('¿Cual es tu direccion?')
+telefono = input('¿Cual es tu telefono?')
+
+personas = {'nombre':nombre, 'edad':edad, 'direccion':direccion,'telefono':telefono}
+
+print(personas['nombre'], 'tiene ',personas['edad'], 'años, vive en ' , personas['direccion'] , ' y su número de teléfono es ' , personas['telefono'])
+
+'''
+
+'''
+Escribir un programa que guarde en un diccionario los precios de las frutas de la tabla, pregunte al
+usuario por una fruta, un número de kilos y muestre por pantalla el precio de ese número de kilos de
+fruta. Si la fruta no está en el diccionario debe mostrar un mensaje informando de ello.
+Fruta Precio
+Plátano 1.35
+Manzana 0.80
+Pera 0.85
+Naranja 0.70
+
+
+
+frutas={
+  'Platano': 1.35,
+  'Manzana': 0.80,
+  'Pera': 0.85,
+  'Naranja': 0.70  
+}
+
+fruta = input('Ingresa una fruta: ')
+fruta = fruta.title()
+kg = float(input('¿Cuantos kilos necesitas?'))
+
+if fruta in frutas:
+  print('El valor de ', kg, ' kilos, de la fruta ', fruta, ' es: ', kg*frutas[fruta])
+else:
+  print('No tengo esa fruta ', fruta)
+
+  '''
+
+'''
+Escribir un programa que cree un diccionario simulando una cesta de la compra. El programa debe
+preguntar el artículo y su precio y añadir el par al diccionario, hasta que el usuario decida terminar.
+Después se debe mostrar por pantalla la lista de la compra y el coste total, con el siguiente formato
+Lista de la compra
+Artículo 1 Precio
+Artículo 2 Precio
+Artículo 3 Precio
+… …
+Total Coste
+
+'''
+
+articulos ={}
+continuar = True
+
+while continuar:
+  articulo = input("Ingrese un articulo: ")
+  precio = float(input('Ingrese el precio del articulo: '))
+  articulos[articulo] = precio
+  pregunta= input('¿Deseas agregar otro articulo? (Si/No)')
+  pregunta = pregunta.title()
+  continuar = (pregunta == 'Si')
+
+print('La lista total de articulos')
+total = 0
+for x,y in articulos.items():
+  print(x,'\t',y)
+  total += y
+
+print('El costo total es: ', total)
