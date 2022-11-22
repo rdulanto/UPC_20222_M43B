@@ -1,0 +1,51 @@
+'''
+Resolver este ejercicio de materias, alumnos y calificaciones en donde sacaremos promedios y
+alumnos reprobados.
+La matriz ya estará llena al momento de ejecutarse el ejercicio, es decir, la llenará el programador.
+La solicitud dice:
+ Muestra por pantalla cuántos alumnos desaprobaron cada asignatura
+ Realiza la media de las notas de cada alumno
+ Muestra por pantalla los nombres de los alumnos que obtuvieron una nota media superior a 12.
+'''
+
+def main():
+  calificaciones = {
+    "alumno 1":[
+              {"curso":"matematica","nota":10},
+              {"curso":"lenguaje","nota":15}
+              ],
+    "alumno 2":[
+              {"curso":"matematica","nota":14},
+              {"curso":"lenguaje","nota":11}
+              ],
+    "alumno 3":[
+              {"curso":"matematica","nota":8},
+              {"curso":"lenguaje","nota":7}
+              ]    
+  }
+
+  imprimir_desaprobados(calificaciones)
+
+
+
+
+def imprimir_desaprobados(calificacion):
+  nota_aprobatoria = 15
+  cursos_desaprobados = {}
+
+  for alumno in calificacion:
+    for curso_calificacion in calificacion[alumno]:
+      curso = curso_calificacion["curso"]
+      nota = curso_calificacion["nota"]
+      if curso not in cursos_desaprobados:
+        cursos_desaprobados[curso] = 0
+      if nota < nota_aprobatoria:
+        cursos_desaprobados[curso] += 1
+
+  for curso_desaprobado in cursos_desaprobados:
+    contador = cursos_desaprobados[curso_desaprobado]
+    print(f"{curso_desaprobado} fue desaprobado por {contador} alumnos")
+
+
+
+main()
