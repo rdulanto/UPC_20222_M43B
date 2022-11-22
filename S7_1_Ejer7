@@ -1,0 +1,15 @@
+'''
+Escribir una función que reciba una muestra de números en una lista y devuelva otra lista con sus
+cuadrados.
+'''
+
+def cuadrado(miLista):
+  otraLista = []
+  for i in miLista:
+    otraLista.append(i**2)
+  return otraLista
+
+lista = [2,4,6,8]
+
+for i in cuadrado(lista):
+  print("valor "+ str(i))
