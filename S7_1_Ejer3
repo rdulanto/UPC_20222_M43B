@@ -1,0 +1,22 @@
+'''
+Escribir una función que reciba un número entero positivo y devuelva su factorial.
+'''
+'''
+ejemplo:
+6! = 6 * 5!
+5! = 5 * 4!
+4! = 4 * 3!
+3! = 3 * 2!
+2! = 2 * 1!
+1! = 1
+'''
+
+def factorial(num):
+  fct = 1
+  for i in range(num):
+    fct *= (i+1)
+    #fct = fct * i
+  return fct
+
+numero = int(input("Ingresa un valor: "))
+print("El resultado del factorial de "+ str(numero) + " es " + str(factorial(numero)))
