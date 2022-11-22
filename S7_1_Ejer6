@@ -1,0 +1,11 @@
+'''
+Escribir una función que reciba una muestra de números en una lista y devuelva su media
+'''
+
+def promedio(listaNum):
+  prom = sum(listaNum) / len(listaNum)
+  return prom
+
+
+miLista = [2,4,6,8,20]
+print(promedio(miLista))
