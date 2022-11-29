@@ -1,0 +1,147 @@
+import matplotlib.pyplot as plt
+'''
+plt.plot([4, 8, 13, 17, 20 ] , [54, 67, 98, 78, 45 ], 'g--d')
+plt.title("Ejemplo de Gráfica X")
+plt.xlabel("Eje X")
+plt.ylabel("Eje Y")
+
+plt.show()
+
+
+
+x =[2,4,6,5,42,543,5,3,73,64,42,97,63,76,63,8,73,97,23,45,56,89,45,3,23,2,5,78,23,56,67,78,8,3,78,34,67,23,324,234,43,
+544,54,33,223,443,444,234,76,432,233,23,232,243,222,221,254,222,276,300,353,354,387,364,309]
+num_bis = 6
+n, bins, patches = plt.hist(x, num_bis, facecolor ='green')
+plt.title("Ejemplo de Histograma")
+plt.xlabel("Eje X")
+plt.ylabel("Eje Y")
+plt.legend(prop ={'size': 10})
+plt.show()
+
+
+
+import datetime as d
+x = d.datetime.now()
+print(x) 
+print(x.year) 
+print(x.strftime("%Z")) 
+
+
+
+import math
+x = min(5, 10, 25)
+y = max(5, 10, 25)
+print("El valor mínimo es ", x) # El resultado es 5
+print("El valor maximo es ",y) # El resultado es 25
+x = math.sqrt(y)
+print("La raiz de 25 es ", x)
+
+
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr) 
+print(type(arr))
+
+
+
+import numpy as np
+arr = np.array([1, 2, 3, 4], ndmin=5)
+print(arr)
+print('numero de dimensiones :', arr.ndim) 
+
+
+
+
+
+import pandas as pd
+s1 = pd.Series({"Calculo Diferencial": 16.0, "Calculo Integral": 13.5, "Calculo Vectorial":12.5, "Ecuaciones diferenciales":18.5})
+print(s1)
+
+s = pd.Series(['a', 'b', 'c'])
+
+print(s.apply(str.upper))
+
+
+
+import pandas as pd
+import numpy as np
+df = pd.DataFrame( np.array([["Juan Pérez","Jperez@gmail.com", "Calculo Integral", 13.75, 1],
+["Francisco Quiroz", "Fquiroz@gmail.com", "Calculo Diferencial", 18.5, 2],
+["Enrique Panta", "Epanta@gmail.com", "Calculo Vectorial", 17.2, 1]]),
+columns=[ "nombre", "correo", "curso", "nota", "veces"] )
+print(df)
+
+
+import pandas as pd 
+df = pd.read_csv(
+'ejemplo.csv', sep=',', decimal=',')
+print(df.head())
+
+Prom=df["edad"].mean()
+Mini=df["edad"].min()
+Maxi=df["edad"].max()
+print("El promedio es", Prom)
+print("La edad minima es ", Mini)
+print("La edad maxima es ", Maxi)
+
+
+
+import pandas as pd 
+
+import numpy as np
+
+df = pd.DataFrame( np.array([["Juan Pérez","Jperez@gmail.com", "Calculo Integral", 13.75, 1],
+["Francisco Quiroz", "Fquiroz@gmail.com", "Calculo Diferencial", 18.5, 2],
+["Enrique Panta", "Epanta@gmail.com", "Calculo Vectorial", 17.2, 1]]),
+columns=[ "nombre", "correo", "curso", "nota", "veces"] )
+
+
+df.to_excel('miOtroEjemplo.xlsx', sheet_name='Notas')
+
+
+
+import tkinter as tk # importa la librería tkinter
+raiz = tk.Tk() # crea ventana
+raiz.mainloop()
+
+
+import tkinter as tk
+ventana = tk.Tk()
+ventana.geometry('200x200+100+100')
+ventana.title('Uso de Etiquetas')
+#Creamos Las etiquetas
+labelUsuario = tk.Label(text='Usuario')
+labelDatos = tk.Label(text='Ricardo')
+#Agregamos las etiquetas a la ventana
+labelUsuario.pack()
+labelDatos.pack()
+ventana.mainloop()
+
+'''
+
+import tkinter as tk
+from tkinter import ttk
+
+def funcion_click():
+  accion.configure(text='**¡Haz hecho click!**')
+  etiqueta.configure(foreground='red')
+  
+ventana = tk.Tk()
+ventana.geometry('300x100+100+100')
+ventana.title('Python -Tkinter')
+etiqueta = ttk.Label(ventana, text='Hola a todos!!!')
+etiqueta.grid(row=0, column=0)
+
+# Agregar una caja de texto
+nombre = tk.StringVar() # se crea la variable para Entry con StringVar
+preguntar_nombre = ttk.Entry(ventana, width=20, textvariable=nombre)
+preguntar_nombre.grid(column=0, row=1)
+
+
+
+
+# Agrega un boton
+accion = ttk.Button(ventana, text='Haz click aquí', command=funcion_click)
+accion.grid(column=1, row=0)
+ventana.mainloop()
