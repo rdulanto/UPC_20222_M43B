@@ -1,0 +1,173 @@
+'''
+Escribir un programa que pregunte al usuario por las ventas de un rango de años y muestre por
+pantalla un diagrama de líneas con la evolución de las ventas.
+
+
+
+#importamos la libreria
+import matplotlib.pyplot as p
+
+anhoIni = int(input('Ingrese un año inicial: '))
+anhoFin = int(input('Ingrese un año final: '))
+
+ventas = {}
+
+for i in range(anhoIni, anhoFin + 1):
+  ventas[i] = float(input('Ingrese las ventas del año ' + str(i) + ': '))
+
+fig, ax = p.subplots()
+#dibujar la linea, con los valores del diccionario ventas
+ax.plot(ventas.keys(),ventas.values())
+#mostrar el grafico en la pantalla
+p.show()
+
+'''
+
+'''
+Preg2
+Escribir una función que reciba un diccionario con las notas de las asignaturas de un curso y una
+cadena con el nombre de un color y devuelva un diagrama de barras de las notas en el color dado.
+
+
+import matplotlib.pyplot as p
+
+def funcion_Diagrama(notas, color):
+
+  fig, ax = p.subplots()
+  ax.bar(notas.keys(),notas.values(),color=color)
+  return ax
+
+
+notas = {'Lenguaje':12,'Matematicas':15,'Fisica':17, 'Historia':10}
+funcion_Diagrama(notas, 'red')
+p.show()
+
+'''
+
+'''
+Preg 3
+
+Escribir una función que reciba una serie de Pandas con las notas de los alumnos de un curso y
+devuelva un diagrama de cajas con las notas. El diagrama debe tener el título “Distribución de notas”.
+
+import matplotlib.pyplot as p
+import pandas as pd
+
+def funcion_Diagrama(notas):
+
+  fig, ax = p.subplots()
+  
+  notas.plot(kind='box', ax=ax)
+  p.title('Distribución de notas')
+  
+  return ax
+
+
+notas = [12,10,15,18,5,14,9,14,16]
+s_notas = pd.Series(notas)
+
+funcion_Diagrama(s_notas)
+p.show()
+
+'''
+
+'''
+Preg 4
+
+Escribir una función que reciba una serie de Pandas con el número de ventas de un producto durante
+los meses de un trimestre y un título y cree un diagrama de sectores con las ventas en formato png
+con el título dado. El diagrama debe guardarse en un fichero con formato png y el título dado.
+
+
+import matplotlib.pyplot as p
+import pandas as pd
+
+def funcion_Diagrama(ventas, titulo):
+
+  fig, ax = p.subplots()
+  ventas.plot(kind='pie', ax = ax)
+  p.title(titulo)
+  p.savefig(titulo + '.png')
+  return ax
+  
+
+ventas={'Enero':7000,'Febrero':9000,'Marzo':1500,'Abril':3000}
+s_ventas = pd.Series(ventas)
+
+
+funcion_Diagrama(s_ventas, 'Ventas por meses')
+p.show()
+'''
+
+
+'''
+Preg 6
+
+Escribir una función que reciba un dataframe de Pandas con los ingresos y gastos de una empresa por
+meses y devuelva un diagrama de líneas con dos líneas, una para los ingresos y otra para los gastos.
+El diagrama debe tener una leyenda identificando la línea de los ingresos y la de los gastos, un título
+con el nombre “Evolución de ingresos y gastos” y el eje y debe empezar en 0.
+
+
+import matplotlib.pyplot as p
+import pandas as pd
+
+def funcion_Diagrama(datos):
+
+  fig, ax = p.subplots()
+  datos.plot(ax = ax)
+
+  ax.set_ylim([0, max(datos.Ingresos.max(), datos.Egresos.max()) + 500])
+
+  p.title('Evolución de Ingresos y Egresos')
+  return ax
+  
+
+
+datos = {
+  'Mes':['Ene','Feb','Mar','Abr'],
+  'Ingresos':[10000,15000,25000,20000],
+  'Egresos':[4500,5000,4800,6000]  
+}
+
+df_datos = pd.DataFrame(datos).set_index('Mes')
+funcion_Diagrama(df_datos)
+
+p.show()
+
+'''
+
+
+'''Ejercicio 7
+
+El fichero bancos.csv contiene las cotizaciones de los principales bancos de España con : Empresa
+(nombre de la empresa), Apertura (precio de la acción a la apertura de bolsa), Máximo (precio
+máximo de la acción durante la jornada), Mínimo (precio mínimo de la acción durante la jornada),
+Cierre (precio de la acción al cierre de bolsa), Volumen (volumen al cierre de bolsa). Construir una
+función reciba el fichero bancos.csv y cree un diagrama de líneas con las series temporales de las
+cotizaciones de cierre de cada banco.
+'''
+
+import matplotlib.pyplot as p
+import pandas as pd
+
+def funcion_Diagrama(datos, variable):
+
+  fig, ax = p.subplots()
+
+  datos.groupby('Empresa').plot(x='Fecha', y=variable, ax =ax)
+
+  p.title('Evolucion de las cotizaciones ('+ variable + ')')
+  p.legend(datos.groupby('Empresa').groups.keys())
+  p.savefig(variable + '.png')
+  return ax
+  
+
+
+df_datos = pd.read_csv('bancos.csv')
+
+df_datos["Fecha"] = pd.to_datetime(df_datos["Fecha"])
+
+funcion_Diagrama(df_datos,'Cierre')
+
+p.show()
